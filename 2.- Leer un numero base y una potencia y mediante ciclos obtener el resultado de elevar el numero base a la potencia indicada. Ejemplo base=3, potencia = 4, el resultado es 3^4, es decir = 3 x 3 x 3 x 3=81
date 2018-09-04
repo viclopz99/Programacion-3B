@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int numero,potencia,exponente=1,i=1;
+
+	cout<<"Ingrese el numero que quiera elevar:  " <<endl;
+
+	cin>>numero;
+
+	cout<<"Ingrese a que potencia quiera elevarlo: "<< endl;
+
+	cin>>potencia;
+
+	while(i<=potencia)
+    {
+		exponente=exponente*numero;
+		i++;
+	}
+    
+	cout<<"Tu resulatado elevado es: "<<exponente<< endl;
+
+	return 0;
+
+}
