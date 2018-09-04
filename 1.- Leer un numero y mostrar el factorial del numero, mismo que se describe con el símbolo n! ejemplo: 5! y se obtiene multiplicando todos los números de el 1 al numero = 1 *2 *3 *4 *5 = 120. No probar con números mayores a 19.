@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	int numero,factorial=1,i=1;
+	cout<<"Agregue un numero para saber su factorial:" << endl;
+	cin>>numero;
+
+	while(i<=numero){
+		factorial=factorial*i;
+		i++;
+	}
+	    cout<<"El factorial de: "<<numero<<" es = "<<factorial<<endl;
+
+
+
+
+ return 0;
+}
