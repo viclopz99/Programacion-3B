@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    int a,b,c;
+    a=54000;
+    b=34000;
+    c=0;
+    while(a<=b){
+
+    a=a+(a*0.06);
+    b=b+(b*0.03);
+
+    c++;
+
+}
+    cout<<"La poblacion de a es: "<<a<<endl;
+
+    cout<<"La poblacion de b es: "<<b<<endl;
+
+
+return 0;
+}
