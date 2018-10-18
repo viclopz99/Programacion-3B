@@ -1,71 +1,72 @@
-#include  <stdlib.h>
-#include  <iostream>
-#include  <time.h>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
 
 
-using namespace  std ;
+int  dados ();
+void hist (int lados[], int n);
 
 
-int  dado ();
-int  histo(int tam);
 
-
-int  main () {
+int  main ()
+{
 
 	srand ( time ( NULL ));
 
-	int opcion, lados [ 6 ] = { 0 }, n;
-do
-{
-   cout <<"lanze un dado oprimiendo 1:"<< endl ;
-	cin >> opcion;
-
-{
-
-
-
-
-	int suma;
-
-	 cout << "Dos  Lanzamientos: " ;
+	int lados [ 11 ] = {0};
+    int suma=0;
 
 	    for  ( int i=1; i <= 100; i ++)
 	    {
-	    	n = dado () + dado ();
-	    	lados [n- 1 ] ++;
+	    	suma = dados ();
+
+	    	for  ( int i = 0; i < 11; i ++)
+            {
+
+                if (suma == i+2)
+                {
+                    lados[i]++;
+                }
+            }
+
 		}
-		for  ( int i = 1; i <= 6; i ++)
-		{
 
-			suma += lados [i- 1 ];
-		}
-			cout << " Lados totales " << suma << "  " ;
-			cout << histo(suma) << endl;
+		 hist(lados,11);
 
+
+    return 0;
 }
 
-
-}
-
-    while (opcion != 0 );
-
-    return 0 ;
-}
-
-int  dado ()
+int dados()
 {
-    int n;
+    int dado=0;
 
-    n = rand ()% 6 + 1 ;
 
-    return n;
+    for(int i=0; i<2; i++)
+    {
+        dado += 1 + rand()%(6);
+    }
+
+
+    return (dado);
 }
-int  histo(int tam)
+
+
+
+void hist (int lados[], int n)
 {
-    int i;
 
-    for (i = 1;i >= tam;i ++)
 
-    cout << " * " ;
-    return i;
+    for (int i=0; i<n; i++)
+    {
+        cout << i+2 << "\t" ;
+
+        for(int a=0; a<lados[i]; a++)
+        {
+          cout << " * ";
+        }
+        cout << endl;
+    }
 }
